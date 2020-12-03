@@ -1,0 +1,18 @@
+<div class="list-group">
+    <a *ngFor="let publication of publications" class="bg-transparent list-group-item list-group-item-action flex-column align-items-start" >
+      <div class="media">
+          <div class="media-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                      <h2 class="mt-1 display-5">{{publication.articulo.marca.nombre}}<br>
+                        <small class="lead d-none d-sm-block">{{publication.articulo.subcategoria.nombre}}</small>
+                        <small class="lead d-block d-sm-none text-primary">{{publication.precio}}</small>
+                      </h2>
+                      <span class="text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>
+                </div>
+                <div class="d-none d-sm-block"><h3 class="mt-1 text-primary">{{publication.precio | pesos}}</h3></div>
+              </div>
+          </div>
+        </div>
+    </a>
+</div>
