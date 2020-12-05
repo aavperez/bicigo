@@ -21,7 +21,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
   declarations: [
     AppComponent,
     MenuComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatGridListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

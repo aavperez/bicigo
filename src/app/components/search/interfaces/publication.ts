@@ -63,7 +63,10 @@ export interface Publication {
           "posicion": number,
           "created_at": Date,
           "updated_at": Date,
-          "ruta": string,
+          "foto": string,
+          "foto_sm": string,
+          "foto_md": string,
+          "foto_lg": string,
         }
       ],
       "categoria": {
