@@ -1,1 +1,27 @@
-<p>Precio::{{publication?.precio}}</p>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{publication.articulo.marca.nombre}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+            <span class="card-text text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>
+            <p class="card-text">{{publication.articulo.descripcion | slice:0:50}}</p>
+            <h3 class="mt-1 text-primary">{{publication.precio | pesos}}</h3>
+            <div *ngFor="let foto of publication.articulo.fotos">
+                <img src="{{foto.foto_md}}" class="d-block w-100">
+            </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>

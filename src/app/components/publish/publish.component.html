@@ -1,1 +1,136 @@
-<p>publish works!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="text-primary display-5">Ingresa los datos de tu publicación</h1>
+
+        
+        <form [formGroup]="publishForm" (ngSubmit)="submitForm()">
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                        <p class="lead">Datos de la bicicleta</p>
+                            <div class="form-row">
+
+
+                            <div class="col-md-6">
+                                <div class="form-group form-row">
+                                    <label for="categoria_id" class="col-3 col-md-12 col-form-label">Categoría *</label>
+                                    <div class="col-9 col-md-12">
+                                    <select id="categoria_id" class="form-control" name="categoria_id" formControlName="categoria_id" >
+                                        <option value="">Selecciona</option><option value="1" selected="selected">Bicicletas</option><option value="3">Accesorios</option></select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group form-row">
+                                    <label for="subcategoria_id" class="col-3 col-md-12 col-form-label">Tipo *</label>
+                                    <div class="col-9 col-md-12" id="respuesta_subcategoria">
+                                    <select id="subcategoria_id" class="form-control" name="subcategoria_id" formControlName="subcategoria_id">
+                                        <option selected="selected" value="">Selecciona</option><option value="62">Mountain Bike </option><option value="63">Mountain Bike XC</option><option value="65">Mountain Bike Enduro</option><option value="66">Mountain Bike Downhill</option><option value="67">Ruta - Triatlon - Pista</option><option value="68">Eléctrica</option><option value="69">Otros</option></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-row">
+                                    <label for="marca_id" class="col-3 col-md-12 col-form-label">Marca *</label>
+                                    <div class="col-9 col-md-12">
+                                    <select id="marca_id" class="form-control" name="marca_id" formControlName="marca_id">
+                                        <option selected="selected" value="">Selecciona</option><option value="555">Altered</option><option value="556">Altitude</option><option value="557">Avalanche</option><option value="558">Aventon</option><option value="559">Beima</option><option value="560">Benotto</option><option value="561">Bergamont</option><option value="562">Besatti</option><option value="563">BH</option><option value="564">Bianchi</option><option value="565">Bionicon</option><option value="566">BMC</option><option value="567">Brompton</option><option value="568">Caloi</option><option value="569">Cannondale</option><option value="570">Canyon</option><option value="571">Cervelo</option><option value="572">Cic</option><option value="573">Commencal</option><option value="574">Corratec</option><option value="575">Crank</option><option value="576">Cube</option><option value="577">Dahon</option><option value="578">De la cruz</option><option value="579">DeVinci</option><option value="580">Diamondblack</option><option value="581">Ditec</option><option value="582">Eclipse</option><option value="583">Eros</option><option value="663">Fahren</option><option value="584">Fantom</option><option value="585">Felt</option><option value="586">Fireeye</option><option value="587">Focus</option><option value="588">Fratta</option><option value="589">Fuji</option><option value="590">Gama</option><option value="591">Gary Fisher</option><option value="592">Giant</option><option value="593">Gravis</option><option value="594">GT</option><option value="595">Ibis</option><option value="596">Intense</option><option value="597">Iron Horse</option><option value="598">Jamis</option><option value="599">Jeep</option><option value="600">K1</option><option value="601">K2</option><option value="602">Karbona</option><option value="603">KHS</option><option value="604">Kinesis</option><option value="605">Knolly</option><option value="606">Kona</option><option value="607">Krom</option><option value="608">Kross</option><option value="609">KTM</option><option value="610">Kuota</option><option value="611">Lahsen</option><option value="612">Lapierre</option><option value="613">Majin</option><option value="614">Marlin</option><option value="615">Megamo</option><option value="616">Merida</option><option value="664">Mondraker</option><option value="617">Mongoose</option><option value="618">Mosso</option><option value="619">Mtb</option><option value="620">Nakamura Cliff</option><option value="621">Niner</option><option value="622">Norco</option><option value="623">Orange</option><option value="624">Orbea</option><option value="625">Orbital</option><option value="626">Origan</option><option value="628">Oxford</option><option value="629">Ozono</option><option value="630">Pinarello</option><option value="631">Pivot</option><option value="632">Polygon</option><option value="633">Pronghorn</option><option value="634">PZ Racing</option><option value="635">Raleigh</option><option value="636">RBX</option><option value="637">Roading</option><option value="638">Rockshox</option><option value="639">Rocky Mountain</option><option value="640">Santa Cruz</option><option value="641">Scoop</option><option value="642">Scott</option><option value="643">Sebikes</option><option value="644">Senzo</option><option value="645">Silverback</option><option value="646">Specialized</option><option value="647">Stockl</option><option value="648">Strida</option><option value="649">Tern</option><option value="650">Totem</option><option value="651">Transition</option><option value="652">Trek</option><option value="653">Upland</option><option value="654">Vanmoof</option><option value="655">Vargas</option><option value="656">Vectorbike</option><option value="657">Ventana</option><option value="658">Venzo</option><option value="659">World</option><option value="660">Yahgan</option><option value="661">Yeti</option><option value="662">YT Industries</option><option value="627">Otra Marca</option></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-row">
+                                    <label for="modelo_texto" class="col-3 col-md-12 col-form-label">Modelo</label>
+                                    <div class="col-9 col-md-12">
+                                    <input name="modelo_texto" placeholder="Ingresa Modelo" class="form-control" formControlName="modelo_texto" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-row">
+                                <label for="precio" class="col-3 col-md-12 col-form-label">Precio *</label>
+                                <div class="col-9 col-md-12 input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroup-sizing-default">$</span>
+                                    </div>
+                                <input placeholder="Ingresa Precio" class="form-control " name="precio" formControlName="precio" type="text">
+                                </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <label for="descripcion">Descripción</label>
+                                <textarea placeholder="Describe tu bicicleta" class="form-control" rows="5" name="descripcion"  cols="50" id="descripcion" formControlName="descripcion"></textarea>
+                            </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="lead">Ubicación</p>
+                            <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <div class="form-row">
+                                    <label for="region_id" class="col-3 col-md-12 col-form-label">Región *</label>
+                                    <div class="col-9 col-md-12">
+                                    <select id="region_id" class="form-control" name="region_id" formControlName="region_id">
+                                        <option selected="selected" value="">Selecciona una Región</option><option value="15">RM</option><option value="1">XV</option><option value="2">I</option><option value="3">II</option><option value="4">III</option><option value="5">IV</option><option value="6">V</option><option value="7">VI</option><option value="8">VII</option><option value="9">VIII</option><option value="10">IX</option><option value="11">XIV</option><option value="12">X</option><option value="13">XI</option><option value="14">XII</option></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div class="form-row">
+                                    <label for="comuna_id" class="col-3 col-md-12 col-form-label">Comuna *</label>
+                                    <div id="respuesta_comuna" class="col-9 col-md-12">
+                                    <select id="comuna_id" class="form-control" name="comuna_id" formControlName="comuna_id">
+                                        <option selected="selected" value="">Selecciona una Comuna</option><option value="64">Algarrobo</option><option value="305">Alhué</option><option value="153">Alto Biobío</option><option value="26">Alto del Carmen</option><option value="5">Alto Hospicio</option><option value="244">Ancud</option><option value="34">Andacollo</option><option value="221">Angol</option><option value="284">Antártica</option><option value="12">Antofagasta</option><option value="154">Antuco</option><option value="146">Arauco</option><option value="1">Arica</option><option value="274">Aysén</option><option value="301">Buin</option><option value="179">Bulnes</option><option value="54">Cabildo</option><option value="285">Cabo de Hornos</option><option value="155">Cabrero</option><option value="16">Calama</option><option value="254">Calbuco</option><option value="23">Caldera</option><option value="302">Calera de Tango</option><option value="46">Calle Larga</option><option value="2">Camarones</option><option value="7">Camiña</option><option value="30">Canela</option><option value="147">Cañete</option><option value="200">Carahue</option><option value="65">Cartagena</option><option value="76">Casablanca</option><option value="245">Castro</option><option value="70">Catemu</option><option value="116">Cauquenes</option><option value="310">Cerrillos</option><option value="311">Cerro Navia</option><option value="270">Chaitén</option><option value="21">Chañaral</option><option value="117">Chanco</option><option value="106">Chépica</option><option value="167">Chiguayante</option><option value="282">Chile Chico</option><option value="180">Chillán</option><option value="181">Chillán Viejo</option><option value="107">Chimbarongo</option><option value="201">Cholchol</option><option value="246">Chonchi</option><option value="275">Cisnes</option><option value="182">Cobquecura</option><option value="255">Cochamó</option><option value="277">Cochrane</option><option value="83">Codegua</option><option value="183">Coelemu</option><option value="184">Coihueco</option><option value="84">Coínco</option><option value="128">Colbún</option><option value="8">Colchane</option><option value="295">Colina</option><option value="222">Collipulli</option><option value="85">Coltauco</option><option value="40">Combarbalá</option><option value="168">Concepción</option><option value="312">Conchalí</option><option value="77">Concón</option><option value="136">Constitución</option><option value="148">Contulmo</option><option value="24">Copiapó</option><option value="35">Coquimbo</option><option value="169">Coronel</option><option value="236">Corral</option><option value="280">Coyhaique</option><option value="202">Cunco</option><option value="223">Curacautín</option><option value="306">Curacaví</option><option value="247">Curaco de Vélez</option><option value="149">Curanilahue</option><option value="203">Curarrehue</option><option value="137">Curepto</option><option value="119">Curicó</option><option value="248">Dalcahue</option><option value="22">Diego de Almagro</option><option value="86">Doñihue</option><option value="313">El Bosque</option><option value="185">El Carmen</option><option value="342">El Monte</option><option value="66">El Quisco</option><option value="67">El Tabo</option><option value="138">Empedrado</option><option value="224">Ercilla</option><option value="314">Estación Central</option><option value="170">Florida</option><option value="204">Freire</option><option value="27">Freirina</option><option value="256">Fresia</option><option value="257">Frutillar</option><option value="271">Futaleufú</option><option value="232">Futrono</option><option value="205">Galvarino</option><option value="3">General Lagos</option><option value="206">Gorbea</option><option value="87">Graneros</option><option value="276">Guaitecas</option><option value="59">Hijuelas</option><option value="272">Hualaihué</option><option value="120">Hualañé</option><option value="171">Hualpén</option><option value="172">Hualqui</option><option value="9">Huara</option><option value="28">Huasco</option><option value="315">Huechuraba</option><option value="31">Illapel</option><option value="316">Independencia</option><option value="6">Iquique</option><option value="343">Isla de Maipo</option><option value="45">Isla de Pascua</option><option value="78">Juan Fernández</option><option value="60">La Calera</option><option value="317">La Cisterna</option><option value="61">La Cruz</option><option value="100">La Estrella</option><option value="319">La Florida</option><option value="318">La Granja</option><option value="36">La Higuera</option><option value="55">La Ligua</option><option value="320">La Pintana</option><option value="321">La Reina</option><option value="37">La Serena</option><option value="233">La Unión</option><option value="234">Lago Ranco</option><option value="281">Lago Verde</option><option value="286">Laguna Blanca</option><option value="156">Laja</option><option value="296">Lampa</option><option value="237">Lanco</option><option value="88">Las Cabras</option><option value="322">Las Condes</option><option value="207">Lautaro</option><option value="150">Lebu</option><option value="121">Licantén</option><option value="50">Limache</option><option value="129">Linares</option><option value="101">Litueche</option><option value="71">Llaillay</option><option value="258">Llanquihue</option><option value="323">Lo Barnechea</option><option value="324">Lo Espejo</option><option value="325">Lo Prado</option><option value="108">Lolol</option><option value="208">Loncoche</option><option value="130">Longaví</option><option value="225">Lonquimay</option><option value="151">Los Álamos</option><option value="47">Los Andes</option><option value="157">Los Ángeles</option><option value="238">Los Lagos</option><option value="259">Los Muermos</option><option value="226">Los Sauces</option><option value="32">Los Vilos</option><option value="173">Lota</option><option value="227">Lumaco</option><option value="89">Machalí</option><option value="326">Macul</option><option value="239">Máfil</option><option value="327">Maipú</option><option value="90">Malloa</option><option value="102">Marchigüe</option><option value="19">María Elena</option><option value="307">María Pinto</option><option value="240">Mariquina</option><option value="139">Maule</option><option value="260">Maullín</option><option value="13">Mejillones</option><option value="209">Melipeuco</option><option value="308">Melipilla</option><option value="122">Molina</option><option value="41">Monte Patria</option><option value="158">Mulchén</option><option value="159">Nacimiento</option><option value="109">Nancagua</option><option value="293">Natales</option><option value="103">Navidad</option><option value="160">Negrete</option><option value="186">Ninhue</option><option value="187">Ñiquén</option><option value="62">Nogales</option><option value="210">Nueva Imperial</option><option value="328">Ñuñoa</option><option value="278">OHiggins</option><option value="91">Olivar</option><option value="17">Ollagüe</option><option value="51">Olmué</option><option value="263">Osorno</option><option value="42">Ovalle</option><option value="344">Padre Hurtado</option><option value="211">Padre Las Casas</option><option value="38">Paihuano</option><option value="241">Paillaco</option><option value="303">Paine</option><option value="273">Palena</option><option value="110">Palmilla</option><option value="242">Panguipulli</option><option value="72">Panquehue</option><option value="56">Papudo</option><option value="104">Paredones</option><option value="131">Parral</option><option value="329">Pedro Aguirre Cerda</option><option value="140">Pelarco</option><option value="118">Pelluhue</option><option value="188">Pemuco</option><option value="345">Peñaflor</option><option value="330">Peñalolén</option><option value="141">Pencahue</option><option value="174">Penco</option><option value="111">Peralillo</option><option value="212">Perquenco</option><option value="57">Petorca</option><option value="92">Peumo</option><option value="10">Pica</option><option value="93">Pichidegua</option><option value="105">Pichilemu</option><option value="189">Pinto</option><option value="298">Pirque</option><option value="213">Pitrufquén</option><option value="112">Placilla</option><option value="190">Portezuelo</option><option value="290">Porvenir</option><option value="11">Pozo Almonte</option><option value="291">Primavera</option><option value="331">Providencia</option><option value="79">Puchuncaví</option><option value="214">Pucón</option><option value="332">Pudahuel</option><option value="299">Puente Alto</option><option value="261">Puerto Montt</option><option value="264">Puerto Octay</option><option value="262">Puerto Varas</option><option value="113">Pumanque</option><option value="43">Punitaqui</option><option value="287">Punta Arenas</option><option value="249">Puqueldón</option><option value="228">Purén</option><option value="265">Purranque</option><option value="73">Putaendo</option><option value="4">Putre</option><option value="266">Puyehue</option><option value="250">Queilén</option><option value="251">Quellón</option><option value="252">Quemchi</option><option value="161">Quilaco</option><option value="333">Quilicura</option><option value="162">Quilleco</option><option value="191">Quillón</option><option value="63">Quillota</option><option value="52">Quilpué</option><option value="253">Quinchao</option><option value="94">Quinta de Tilcoco</option><option value="334">Quinta Normal</option><option value="80">Quintero</option><option value="192">Quirihue</option><option value="95">Rancagua</option><option value="193">Ránquil</option><option value="123">Rauco</option><option value="335">Recoleta</option><option value="229">Renaico</option><option value="336">Renca</option><option value="97">Rengo</option><option value="96">Requínoa</option><option value="132">Retiro</option><option value="48">Rinconada de Los Andes</option><option value="235">Río Bueno</option><option value="142">Río Claro</option><option value="44">Río Hurtado</option><option value="283">Río Ibáñez</option><option value="267">Río Negro</option><option value="288">Río Verde</option><option value="124">Romeral</option><option value="215">Saavedra</option><option value="125">Sagrada Familia</option><option value="33">Salamanca</option><option value="68">San Antonio</option><option value="304">San Bernardo</option><option value="194">San Carlos</option><option value="143">San Clemente</option><option value="49">San Esteban</option><option value="195">San Fabián</option><option value="74">San Felipe</option><option value="114">San Fernando</option><option value="98">San Francisco de Mostazal</option><option value="289">San Gregorio</option><option value="196">San Ignacio</option><option value="133">San Javier de Loncomilla</option><option value="338">San Joaquín</option><option value="300">San José de Maipo</option><option value="269">San Juan de la Costa</option><option value="337">San Miguel</option><option value="197">San Nicolás</option><option value="268">San Pablo</option><option value="309">San Pedro</option><option value="18">San Pedro de Atacama</option><option value="175">San Pedro de la Paz</option><option value="144">San Rafael</option><option value="339">San Ramón</option><option value="163">San Rosendo</option><option value="99">San Vicente de Tagua Tagua</option><option value="164">Santa Bárbara</option><option value="115">Santa Cruz</option><option value="176">Santa Juana</option><option value="75">Santa María</option><option value="340">Santiago</option><option value="69">Santo Domingo</option><option value="14">Sierra Gorda</option><option value="346">Talagante</option><option value="145">Talca</option><option value="177">Talcahuano</option><option value="15">Taltal</option><option value="216">Temuco</option><option value="126">Teno</option><option value="217">Teodoro Schmidt</option><option value="25">Tierra Amarilla</option><option value="297">Tiltil</option><option value="292">Timaukel</option><option value="152">Tirúa</option><option value="20">Tocopilla</option><option value="347">Todas las Comunas</option><option value="218">Toltén</option><option value="178">Tomé</option><option value="294">Torres del Paine</option><option value="279">Tortel</option><option value="230">Traiguén</option><option value="198">Treguaco</option><option value="165">Tucapel</option><option value="243">Valdivia</option><option value="29">Vallenar</option><option value="81">Valparaíso</option><option value="127">Vichuquén</option><option value="231">Victoria</option><option value="39">Vicuña</option><option value="219">Vilcún</option><option value="134">Villa Alegre</option><option value="53">Villa Alemana</option><option value="220">Villarrica</option><option value="82">Viña del Mar</option><option value="341">Vitacura</option><option value="135">Yerbas Buenas</option><option value="166">Yumbel</option><option value="199">Yungay</option><option value="58">Zapallar</option></select>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="lead">Contacto</p>
+                            
+                            <div class="form-group form-row">
+                                <label for="nombre" class="col-3 col-md-12 col-form-label">Nombre *</label>
+                                <div class="col-9 col-md-12">
+                                <input placeholder="Ingresa tu Nombre" class="form-control " name="nombre" type="text" formControlName="nombre">
+                                </div>
+                            </div>
+                                    
+                            <div class="form-row form-group">
+                                <label for="email" class="col-3 col-md-12 col-form-label">Email *</label>
+                                <div class="col-9 col-md-12">
+                                <input placeholder="Ingresa tu Email " class="form-control " name="email" type="text" formControlName="email">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <button class="btn btn-lg btn-primary btn-block" [disabled]="publishForm.invalid" type="submit">Guardar y Continuar</button>
+        </form>
+    </div>
+</div>

@@ -15,4 +15,9 @@ export class BicigoApiService {
   getPublications(){
     return this.httpClient.get<Publications>(apis.apiPublications);
   }
+
+
+  publish(data: any){
+    return this.httpClient.post("https://bicigo2.test/api/guardar-publicacion", data);
+  }
 }
