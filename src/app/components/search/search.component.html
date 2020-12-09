@@ -1,22 +1,15 @@
-<div class="row">
-  <div class="col-6">
   <div class="row">
-  <div class="col-6 ht-100 pb-4" *ngFor="let publication of publications" >
-  <div class="card">
-    <img *ngIf="publication.articulo.fotos[0]" class="img-fluid" src="{{publication.articulo.fotos[0].foto_sm}}" />
-    <div class="card-body">
-      <h5 class="card-title">{{publication.articulo.marca.nombre}}</h5>
-        <p class="card-text">{{publication.articulo.descripcion | slice:0:100}}</p>
-        <span class="card-text text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>
-        <h3 class="mt-1 text-primary">{{publication.precio | pesos}}</h3>
-      <a (click)="sendPublication(publication)" class="btn btn-primary btn-block">Ver</a>
+    <div class="col-3 ht-100 pb-4" *ngFor="let publication of publications" >
+      <div class="card">
+        <img *ngIf="publication.articulo.fotos[0]" class="img-fluid" src="{{publication.articulo.fotos[0].foto_sm}}" />
+        <div class="card-body">
+          <h5 class="card-title">{{publication.articulo.marca.nombre}}</h5>
+            <span class="card-text text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>
+            <h3 class="mt-1 text-primary">{{publication.precio | pesos}}</h3>
+          <a (click)="sendPublication(publication)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Ver</a>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-  </div>
 
-  </div>
-  <div class="col-6">
-    <app-show [publication]="publication"></app-show>
-  </div>
-</div>
+  <app-show [publication]="publication"></app-show>

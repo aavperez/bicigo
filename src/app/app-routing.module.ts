@@ -10,7 +10,10 @@ const routes: Routes = [
     path: "home",
     loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
   },
-  {path: "publish", loadChildren: './components/publish/publish.module#PublishModule'},
+  {
+    path: "publish",
+    loadChildren: () => import('./components/publish/publish.module').then(m => m.PublishModule),
+  },
   {
     path: "search",
     loadChildren: () => import('./components/search/search.module').then(m => m.SearchModule),
