@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BicigoApiService } from 'src/app/services/bicigo-api.service';
+import { Region } from './interfaces/region';
+import { Comuna } from './interfaces/comuna';
 
 
 
@@ -24,18 +26,32 @@ export class PublishComponent implements OnInit {
     email: new FormControl('')
   })
 
+  public regiones: Region[];
+  public comunas: Comuna[];
+  public regionElegida: Region;
+
   constructor(
     private bicigoApiService: BicigoApiService
   ) { }
 
   ngOnInit() {
+    this.bicigoApiService.getRegions().subscribe(resp => {
+      console.log(resp.data);
+      this.regiones = resp.data;
+    })
   }
 
   submitForm(){
     this.bicigoApiService.publish(this.publishForm.value).subscribe(
-      (response) => console.log(response),
-      (error) => console.log(error)
+      response => console.log(response),
+      error => console.log(error)
     )
+  }
+  
+  clickRegion(){
+    let c = this.publishForm.get('region_id').value;
+    let comunas = this.regiones.find(region=>region.id == c).comunas;
+    this.comunas = comunas;
   }
 
 }
