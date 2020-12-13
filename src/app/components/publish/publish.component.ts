@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BicigoApiService } from 'src/app/services/bicigo-api.service';
-import { Region } from './interfaces/region';
-import { Comuna } from './interfaces/comuna';
+import { Region } from '../../interfaces/region';
+import { Comuna } from '../../interfaces/comuna';
 
 
 
@@ -13,18 +13,21 @@ import { Comuna } from './interfaces/comuna';
 })
 export class PublishComponent implements OnInit {
 
+  submitted = false;
+  
   public publishForm = new FormGroup({
-    categoria_id: new FormControl(''),
-    subcategoria_id: new FormControl(''),
-    marca_id: new FormControl(''),
+    categoria_id: new FormControl('',[Validators.required]),
+    subcategoria_id: new FormControl('',[Validators.required]),
+    marca_id: new FormControl('',[Validators.required]),
     modelo_texto: new FormControl(''),
-    precio: new FormControl(''),
+    precio: new FormControl('',[Validators.required]),
     descripcion: new FormControl(''),
-    region_id: new FormControl(''),
-    comuna_id: new FormControl(''),
+    region_id: new FormControl('',[Validators.required]),
+    comuna_id: new FormControl('',[Validators.required]),
     nombre: new FormControl('',[Validators.required]),
-    email: new FormControl('')
+    email: new FormControl('',[Validators.required]),
   })
+
 
   public regiones: Region[];
   public comunas: Comuna[];
@@ -42,10 +45,17 @@ export class PublishComponent implements OnInit {
   }
 
   submitForm(){
+    this.submitted = true;
+
+    if (this.publishForm.invalid) {return;}
+
     this.bicigoApiService.publish(this.publishForm.value).subscribe(
-      response => console.log(response),
+      response => {
+        console.log(response);
+        this.publishForm.reset();   
+      },
       error => console.log(error)
-    )
+    ) 
   }
   
   clickRegion(){
@@ -53,5 +63,7 @@ export class PublishComponent implements OnInit {
     let comunas = this.regiones.find(region=>region.id == c).comunas;
     this.comunas = comunas;
   }
+
+  get f() { return this.publishForm.controls; }
 
 }

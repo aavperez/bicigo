@@ -14,14 +14,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-//import { pesosPipe } from './custom.pipe';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +27,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

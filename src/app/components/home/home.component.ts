@@ -8,6 +8,12 @@ import {
   AfterViewInit,
   AfterViewChecked,
   OnDestroy,} from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { BicigoApiService } from 'src/app/services/bicigo-api.service';
+import { Publication } from '../../interfaces/publication';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-home',
@@ -25,10 +31,19 @@ export class HomeComponent implements
     OnDestroy
     {
 
+    public valor: string = 'bicicletas';
 
-    public valor: string = 'texto inicial';
+    public searchForm = new FormGroup({
+      busqueda: new FormControl('')
+    });
 
-    constructor() { }
+    public publications: Publication[] = [];
+
+
+    constructor(
+      private bicigoApiService: BicigoApiService,
+      private router : Router
+    ) { }
 
     ngOnChanges() {
       console.log(`ngOnChanges`);
@@ -53,6 +68,23 @@ export class HomeComponent implements
     }
     ngOnDestroy() {
       console.log('ngOnDestroy');
+    }
+
+    submitForm(){
+      let r = this.bicigoApiService.searchPublications(this.searchForm.value).subscribe(
+        response => {
+          console.log(response);
+          this.publications=response.data;
+          //this.router.navigate(["search", this.publications]);
+        },
+        error => console.log(error)
+      ) 
+
+    }
+
+
+    sendPublication= function (valor: Publication) {
+      this.publication=valor;
     }
 
 }

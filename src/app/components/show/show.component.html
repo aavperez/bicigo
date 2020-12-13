@@ -12,7 +12,7 @@
         <div class="modal-body">
             <span class="card-text text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>
             <p class="card-text">{{publication.articulo.descripcion | slice:0:50}}</p>
-            <h3 class="mt-1 text-primary">{{publication.precio | pesos}}</h3>
+            <h3 class="mt-1 text-primary">{{publication.precio }}</h3>
             <div *ngFor="let foto of publication.articulo.fotos">
                 <img src="{{foto.foto_md}}" class="d-block w-100">
             </div>

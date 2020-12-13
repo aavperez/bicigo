@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { apis } from '../../environments/environment';
-import { Publications } from '../components/search/interfaces/publications';
-import { Regions } from "../components/publish/interfaces/regions";
+import { Publications } from '../interfaces/publications';
+import { Regions } from "../interfaces/regions";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,10 @@ export class BicigoApiService {
 
   getPublications(){
     return this.httpClient.get<Publications>('https://bicigo2.test/api/buscar');
+  }
+
+  searchPublications(data: any){
+    return this.httpClient.post<Publications>('https://bicigo2.test/api/buscar', data);
   }
 
 

@@ -1,7 +1,13 @@
   <div class="row">
     <div class="col-3 ht-100 pb-4" *ngFor="let publication of publications" >
       <div class="card">
-        <img *ngIf="publication.articulo.fotos[0]" class="img-fluid" src="{{publication.articulo.fotos[0].foto_sm}}" />
+        <img *ngIf="publication.articulo.fotos.length>0;  else noImage" class="img-fluid" src="{{publication.articulo.fotos[0].foto_sm}}" />
+
+        <ng-template #noImage>
+          <img src="assets/img/t_sinfoto.png" class="img-fluid">
+        </ng-template>
+
+
         <div class="card-body">
           <h5 class="card-title">{{publication.articulo.marca.nombre}}</h5>
             <span class="card-text text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>

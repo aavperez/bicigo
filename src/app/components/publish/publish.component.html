@@ -17,7 +17,7 @@
                                 <div class="form-group form-row">
                                     <label for="categoria_id" class="col-3 col-md-12 col-form-label">Categoría *</label>
                                     <div class="col-9 col-md-12">
-                                    <select id="categoria_id" class="form-control" name="categoria_id" formControlName="categoria_id" >
+                                    <select id="categoria_id" class="form-control" name="categoria_id" formControlName="categoria_id" [ngClass]="{ 'is-invalid':  f.categoria_id.invalid, 'is-valid': f.categoria_id.valid }"> }">
                                         <option value="">Selecciona</option><option value="1" selected="selected">Bicicletas</option><option value="3">Accesorios</option></select>
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                                 <div class="form-group form-row">
                                     <label for="subcategoria_id" class="col-3 col-md-12 col-form-label">Tipo *</label>
                                     <div class="col-9 col-md-12" id="respuesta_subcategoria">
-                                    <select id="subcategoria_id" class="form-control" name="subcategoria_id" formControlName="subcategoria_id">
+                                    <select id="subcategoria_id" class="form-control" name="subcategoria_id" formControlName="subcategoria_id" [ngClass]="{ 'is-invalid':  f.subcategoria_id.invalid, 'is-valid': f.subcategoria_id.valid }">
                                         <option selected="selected" value="">Selecciona</option><option value="62">Mountain Bike </option><option value="63">Mountain Bike XC</option><option value="65">Mountain Bike Enduro</option><option value="66">Mountain Bike Downhill</option><option value="67">Ruta - Triatlon - Pista</option><option value="68">Eléctrica</option><option value="69">Otros</option></select>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                 <div class="form-group form-row">
                                     <label for="marca_id" class="col-3 col-md-12 col-form-label">Marca *</label>
                                     <div class="col-9 col-md-12">
-                                    <select id="marca_id" class="form-control" name="marca_id" formControlName="marca_id">
+                                    <select id="marca_id" class="form-control" name="marca_id" formControlName="marca_id" [ngClass]="{ 'is-invalid':  f.marca_id.invalid, 'is-valid': f.marca_id.valid }">
                                         <option selected="selected" value="">Selecciona</option><option value="555">Altered</option><option value="556">Altitude</option><option value="557">Avalanche</option><option value="558">Aventon</option><option value="559">Beima</option><option value="560">Benotto</option><option value="561">Bergamont</option><option value="562">Besatti</option><option value="563">BH</option><option value="564">Bianchi</option><option value="565">Bionicon</option><option value="566">BMC</option><option value="567">Brompton</option><option value="568">Caloi</option><option value="569">Cannondale</option><option value="570">Canyon</option><option value="571">Cervelo</option><option value="572">Cic</option><option value="573">Commencal</option><option value="574">Corratec</option><option value="575">Crank</option><option value="576">Cube</option><option value="577">Dahon</option><option value="578">De la cruz</option><option value="579">DeVinci</option><option value="580">Diamondblack</option><option value="581">Ditec</option><option value="582">Eclipse</option><option value="583">Eros</option><option value="663">Fahren</option><option value="584">Fantom</option><option value="585">Felt</option><option value="586">Fireeye</option><option value="587">Focus</option><option value="588">Fratta</option><option value="589">Fuji</option><option value="590">Gama</option><option value="591">Gary Fisher</option><option value="592">Giant</option><option value="593">Gravis</option><option value="594">GT</option><option value="595">Ibis</option><option value="596">Intense</option><option value="597">Iron Horse</option><option value="598">Jamis</option><option value="599">Jeep</option><option value="600">K1</option><option value="601">K2</option><option value="602">Karbona</option><option value="603">KHS</option><option value="604">Kinesis</option><option value="605">Knolly</option><option value="606">Kona</option><option value="607">Krom</option><option value="608">Kross</option><option value="609">KTM</option><option value="610">Kuota</option><option value="611">Lahsen</option><option value="612">Lapierre</option><option value="613">Majin</option><option value="614">Marlin</option><option value="615">Megamo</option><option value="616">Merida</option><option value="664">Mondraker</option><option value="617">Mongoose</option><option value="618">Mosso</option><option value="619">Mtb</option><option value="620">Nakamura Cliff</option><option value="621">Niner</option><option value="622">Norco</option><option value="623">Orange</option><option value="624">Orbea</option><option value="625">Orbital</option><option value="626">Origan</option><option value="628">Oxford</option><option value="629">Ozono</option><option value="630">Pinarello</option><option value="631">Pivot</option><option value="632">Polygon</option><option value="633">Pronghorn</option><option value="634">PZ Racing</option><option value="635">Raleigh</option><option value="636">RBX</option><option value="637">Roading</option><option value="638">Rockshox</option><option value="639">Rocky Mountain</option><option value="640">Santa Cruz</option><option value="641">Scoop</option><option value="642">Scott</option><option value="643">Sebikes</option><option value="644">Senzo</option><option value="645">Silverback</option><option value="646">Specialized</option><option value="647">Stockl</option><option value="648">Strida</option><option value="649">Tern</option><option value="650">Totem</option><option value="651">Transition</option><option value="652">Trek</option><option value="653">Upland</option><option value="654">Vanmoof</option><option value="655">Vargas</option><option value="656">Vectorbike</option><option value="657">Ventana</option><option value="658">Venzo</option><option value="659">World</option><option value="660">Yahgan</option><option value="661">Yeti</option><option value="662">YT Industries</option><option value="627">Otra Marca</option></select>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="inputGroup-sizing-default">$</span>
                                     </div>
-                                <input placeholder="Ingresa Precio" class="form-control " name="precio" formControlName="precio" type="text">
+                                <input placeholder="Ingresa Precio" class="form-control " name="precio" formControlName="precio" type="text" [ngClass]="{ 'is-invalid':  f.precio.invalid, 'is-valid': f.precio.valid }">
                                 </div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                 <div class="form-row">
                                     <label for="region_id" class="col-3 col-md-12 col-form-label">Región *</label>
                                     <div class="col-9 col-md-12">
-                                    <select id="region_id" class="form-control" name="region_id" formControlName="region_id"  (change)="clickRegion()">
+                                    <select id="region_id" class="form-control" name="region_id" formControlName="region_id"  (change)="clickRegion()" [ngClass]="{ 'is-invalid':  f.region_id.invalid, 'is-valid': f.region_idvalid }">
                                         <option [value]="region.id" *ngFor="let region of regiones">{{region.nombre}}</option>
                                     </select>
                                     </div>
@@ -96,7 +96,7 @@
                                 <div class="form-row">
                                     <label for="comuna_id" class="col-3 col-md-12 col-form-label">Comuna *</label>
                                     <div id="respuesta_comuna" class="col-9 col-md-12">
-                                    <select id="comuna_id" class="form-control" name="comuna_id" formControlName="comuna_id">
+                                    <select id="comuna_id" class="form-control" name="comuna_id" formControlName="comuna_id" [ngClass]="{ 'is-invalid':  f.comuna_id.invalid, 'is-valid': f.comuna_id.valid }">
                                         <option [value]="comuna.id" *ngFor="let comuna of comunas">{{comuna.nombre}}</option>
                                     </select>
                                     </div>
@@ -114,14 +114,15 @@
                             <div class="form-group form-row">
                                 <label for="nombre" class="col-3 col-md-12 col-form-label">Nombre *</label>
                                 <div class="col-9 col-md-12">
-                                <input placeholder="Ingresa tu Nombre" class="form-control " name="nombre" type="text" formControlName="nombre">
+                                <input placeholder="Ingresa tu Nombre" class="form-control " name="nombre" type="text" formControlName="nombre" [ngClass]="{ 'is-invalid': f.nombre.invalid, 'is-valid': f.nombre.valid }">
+                                <!--<div *ngIf=" f.nombre.errors" class="invalid-feedback"><div *ngIf="f.nombre.errors.required">Required</div></div>-->
                                 </div>
                             </div>
                                     
                             <div class="form-row form-group">
                                 <label for="email" class="col-3 col-md-12 col-form-label">Email *</label>
                                 <div class="col-9 col-md-12">
-                                <input placeholder="Ingresa tu Email " class="form-control " name="email" type="text" formControlName="email">
+                                <input placeholder="Ingresa tu Email " class="form-control " name="email" type="text" formControlName="email" [ngClass]="{ 'is-invalid': f.email.invalid, 'is-valid': f.email.valid }">
                                 </div>
                             </div>
 
@@ -131,8 +132,7 @@
                 </div>
             </div>
 
-
-            <button class="btn btn-lg btn-primary btn-block" [disabled]="publishForm.invalid" type="submit">Guardar y Continuar</button>
+            <button class="btn btn-lg btn-primary btn-block" [disabled]="publishForm.invalid"  type="submit">Guardar</button>
         </form>
     </div>
 </div>

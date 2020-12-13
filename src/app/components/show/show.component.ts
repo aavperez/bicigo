@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Publication } from '../search/interfaces/publication';
+import { Publication } from '../../interfaces/publication';
 
 @Component({
   selector: 'app-show',

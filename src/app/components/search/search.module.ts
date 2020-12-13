@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 import { SearchRoutingModule } from './search-routing.module';
 import { SearchComponent } from './search.component';
 
-import { pesosPipe } from '../../custom.pipe';
+import { SharedModule } from '../../shared/shared.module';
 
-import { ShowComponent} from '../show/show.component';
 
 
 @NgModule({
-  declarations: [SearchComponent,ShowComponent,pesosPipe],
+  declarations: [SearchComponent],
   imports: [
     CommonModule,
-    SearchRoutingModule
+    SearchRoutingModule,
+    SharedModule
   ]
 })
 export class SearchModule { }
