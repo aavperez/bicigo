@@ -125,6 +125,10 @@
               "devServerTarget": "bicigo:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

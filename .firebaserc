@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bicigo-97436": {
+      "hosting": {
+        "bicigo": [
+          "bicigo-97436"
+        ]
+      }
+    }
+  }
+}
