@@ -12,6 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { BicigoApiService } from 'src/app/services/bicigo-api.service';
 import { Publication } from '../../interfaces/publication';
 import { Router } from '@angular/router';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 
 
@@ -42,7 +43,8 @@ export class HomeComponent implements
 
     constructor(
       private bicigoApiService: BicigoApiService,
-      private router : Router
+      private router: Router,
+      private firestoreService: FirestoreService,
     ) { }
 
     ngOnChanges() {
@@ -73,9 +75,8 @@ export class HomeComponent implements
     submitForm(){
       let r = this.bicigoApiService.searchPublications(this.searchForm.value).subscribe(
         response => {
-          console.log(response);
           this.publications=response.data;
-          //this.router.navigate(["search", this.publications]);
+          this.firestoreService.storeBusqueda(this.searchForm.value);
         },
         error => console.log(error)
       ) 

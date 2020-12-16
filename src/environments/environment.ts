@@ -7,7 +7,8 @@ export const environment = {
 };
 
 export const apis ={
-  apiPublications: "https://test.bicigo.cl/api/buscar",
+  apiPublications: "https://test.bicigo.cl/",
+  //apiPublications: "https://bicigo2.test/",
 }
 
 /*

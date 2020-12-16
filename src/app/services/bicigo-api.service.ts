@@ -13,20 +13,22 @@ export class BicigoApiService {
     private httpClient: HttpClient
   ) { }
 
+
+  
   getPublications(){
-    return this.httpClient.get<Publications>('https://bicigo2.test/api/buscar');
+    return this.httpClient.get<Publications>(apis.apiPublications+'api/buscar');
   }
 
   searchPublications(data: any){
-    return this.httpClient.post<Publications>('https://bicigo2.test/api/buscar', data);
+    return this.httpClient.post<Publications>(apis.apiPublications+'api/buscar', data);
   }
 
 
   publish(data: any){
-    return this.httpClient.post("https://bicigo2.test/api/guardar-publicacion", data);
+    return this.httpClient.post(apis.apiPublications+'api/guardar-publicacion', data);
   }
 
   getRegions(){
-    return this.httpClient.get<Regions>("https://bicigo2.test/api/regiones");
+    return this.httpClient.get<Regions>(apis.apiPublications+'api/regiones');
   } 
 }

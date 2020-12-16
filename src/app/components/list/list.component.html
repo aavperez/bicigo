@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Busqueda</th>
+        <th>Fecha</th>
+        <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let busqueda of busquedas">
+        <td>{{busqueda.id}}</td>
+        <td>{{busqueda.resultado.busqueda}}</td>
+        <td>{{busqueda.resultado.fecha}}</td>
+        <td>
+        <button class="btn btn-sm btn-danger" (click)="delete(busqueda.id)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

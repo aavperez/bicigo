@@ -18,8 +18,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListComponent } from './components/list/list.component';
 
 
 
@@ -39,6 +42,7 @@ const firebaseConfig = {
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,8 @@ const firebaseConfig = {
     MatGridListModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

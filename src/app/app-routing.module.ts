@@ -6,6 +6,7 @@ import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginGuard } from  './guards/login.guard';
+import { ListComponent } from './components/list/list.component';
 
 
 
@@ -29,6 +30,9 @@ const routes: Routes = [
         { path:  'login',component:  LoginComponent},
         { path:  'register', component:  RegisterComponent },
     ]
+  },
+  {
+    path: 'list', component: ListComponent
   },
   {path: "", redirectTo: 'home', pathMatch: 'full'},
   {path: "**", redirectTo: 'home', pathMatch: 'full'},
