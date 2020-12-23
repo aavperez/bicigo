@@ -9,7 +9,7 @@
       <tr *ngFor="let busqueda of busquedas">
         <td>{{busqueda.id}}</td>
         <td>{{busqueda.resultado.busqueda}}</td>
-        <td>{{busqueda.resultado.fecha}}</td>
+        <td>{{busqueda.resultado.fecha | date:'dd/mm/yyyy, HH:mm:ss'}}</td>
         <td>
         <button class="btn btn-sm btn-danger" (click)="delete(busqueda.id)">Borrar</button>
         </td>

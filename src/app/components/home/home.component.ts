@@ -39,6 +39,7 @@ export class HomeComponent implements
     });
 
     public publications: Publication[] = [];
+    public loading: boolean;
 
 
     constructor(
@@ -52,6 +53,7 @@ export class HomeComponent implements
     }
     ngOnInit() {
       console.log(`ngOnInit`);
+      this.loading = false;
     }
     ngDoCheck() {
       console.log('ngDoCheck');
@@ -73,13 +75,16 @@ export class HomeComponent implements
     }
 
     submitForm(){
-      let r = this.bicigoApiService.searchPublications(this.searchForm.value).subscribe(
+      this.loading = true; 
+      let r = this.bicigoApiService.searchPublications(this.searchForm.value)
+      .subscribe(
         response => {
+          this.loading = false;
           this.publications=response.data;
           this.firestoreService.storeBusqueda(this.searchForm.value);
         },
         error => console.log(error)
-      ) 
+      )
 
     }
 

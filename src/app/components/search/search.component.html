@@ -1,21 +1,21 @@
-  <div class="row">
-    <div class="col-3 ht-100 pb-4" *ngFor="let publication of publications" >
-      <div class="card">
-        <img *ngIf="publication.articulo.fotos.length>0;  else noImage" class="img-fluid" src="{{publication.articulo.fotos[0].foto_sm}}" />
 
-        <ng-template #noImage>
-          <img src="assets/img/t_sinfoto.png" class="img-fluid">
-        </ng-template>
-
-
-        <div class="card-body">
-          <h5 class="card-title">{{publication.articulo.marca.nombre}}</h5>
-            <span class="card-text text-black-50">{{publication.region.nombre}} - {{publication.comuna.nombre}}</span>
+      <ul class="list">
+        <li class="media mb-4" *ngFor="let publication of publications">
+          <img *ngIf="publication.articulo.fotos.length>0;  else noImage" class="img-fluid mr-3" src="{{publication.articulo.fotos[0].foto_sm}}" />
+          <ng-template #noImage>
+            <img src="assets/img/t_sinfoto.png" class="img-fluid">
+          </ng-template>
+          <div class="media-body">
+            <h5 class="mt-0 mb-1">{{publication.articulo.marca.nombre}}
+              <small><a (click)="sendPublication(publication)" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Ver</a></small>
+            </h5>
+            <p>{{publication.articulo.descripcion | slice:0:100 }}</p>
             <h3 class="mt-1 text-primary">{{publication.precio | pesos}}</h3>
-            <a (click)="sendPublication(publication)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">Ver</a>
-        </div>
-      </div>
-    </div>
-  </div>
+          </div>
+        </li>
+      </ul>
+
+
+
 
   <app-show [publication]="publication"></app-show>

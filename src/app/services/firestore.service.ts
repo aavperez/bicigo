@@ -18,7 +18,7 @@ export class FirestoreService {
   }
 
   getBusquedas() {
-    return this.angularFirestore.collection('busquedas').snapshotChanges();
+    return this.angularFirestore.collection('busquedas',ref => ref.orderBy('fecha','desc')).snapshotChanges();
   }
 
   deleteBusqueda(id: string){

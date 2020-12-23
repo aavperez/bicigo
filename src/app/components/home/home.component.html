@@ -2,11 +2,9 @@
     <div class="container h-100">
 		<div class="row h-100 align-items-center justify-content-md-center">
 			<div class="col-md-auto">
-			<h1 class="display-3 text-dark mb-0">Marketplace de Bicicletas</h1>
-			<h2 class="lead mb-4 text-dark">Tu busqueda será "{{valor}}"</h2>
 			<form [formGroup]="searchForm" (ngSubmit)="submitForm()" method="POST">
 				<div class="form-group input-group">
-					<input [(ngModel)]="valor" type="text" name="busqueda" id="busqueda" formControlName="busqueda"  class="form-control form-control-lg">
+					<input [(ngModel)]="valor" type="text" name="busqueda" id="busqueda" formControlName="busqueda" class="form-control form-control-lg">
 					<div class="input-group-append">
 						<button class="input-group-text btn" type="submit">Buscar</button>
 					</div>
@@ -16,9 +14,11 @@
 		</div>
 	</div>
 </header>
+<div *ngIf="loading===false; else indicator">
+<h2 class="lead">Resultado para "{{valor}}"</h2>
 
 <div class="row" *ngIf="publications.length>0">
-    <div class="col-3 ht-100 pb-4" *ngFor="let publication of publications" >
+    <div class="col-6 col-sm-4 col-md-3 ht-100 pb-4" *ngFor="let publication of publications" >
       <div class="card">
         <img *ngIf="publication.articulo.fotos.length>0;  else noImage" class="img-fluid" src="{{publication.articulo.fotos[0].foto_sm}}" />
 
@@ -36,6 +36,20 @@
       </div>
     </div>
   </div>
+</div>
+
+
+
+  <ng-template #indicator>
+    <div class="row">
+      <div class="col-md-4 mx-auto text-center">
+    <div class="spinner-border text-primary " role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    </div>
+    </div>
+
+  </ng-template>
 
 
   <app-show [publication]="publication"></app-show>

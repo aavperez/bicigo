@@ -1,15 +1,15 @@
 
 # Proyecto Bicigo
 
-Este proyecto consume las apis expuestas por el sitio web test.bicigo.cl/api para realizar consultas y agregar nuevas publicaciones. Adicionalmente hace uso de Firestore para registro de las busquedas de usuario y Firebase para registro y autentificacion de usuarios para permitir la publicación.
+Este proyecto consume las apis expuestas por el sitio web test.bicigo.cl/api para realizar busquedas y agregar nuevas publicaciones. Adicionalmente hace uso de Firestore para registro de las busquedas de usuario y Firebase para registro y autentificacion de usuarios para permitir la publicación.
 
 ## Componentes:
 
 ### Home
 
-- Búsqueda de productos sobre api bicigo
+- Búsqueda de productos sobre api Bicigo.
 
-- Registro de búsqueda y fecha en Firestore
+- Registro de información de busqueda (texto y fecha) en Firestore.
 
 - Comunicación con componente Show para mostrar detalle de publicación.
 
@@ -17,33 +17,32 @@ Este proyecto consume las apis expuestas por el sitio web test.bicigo.cl/api par
 
 ### Search
 
-- Listado de todos los resultados de api bicigo.cl
+- Listado de todos los resultados de api Bicigo.
 
 - Comunicación con componente Show para mostrar detalle de publicación.
-
   
 
 ### Publish
 
-- Agregar nuevo producto mediante formulario y api bicigo.cl (POST)
+- Agregar nuevo producto mediante formulario y api bicigo.cl (POST).
 
   
 
-Register
+### Admin/Register
 
-- Registro de usuario (email/pass) en Firestore
+- Registro de usuario (email/pass) en Firestore.
 
   
 
 ### Admin/Login
 
-- Login de usuario en Firestore
+- Login de usuario en Firestore.
 
   
 
 ### Admin/List
 
-- Listar y borrar registros de busquedas en Firestore
+- Listar y borrar registros de busquedas en Firestore.
 
   
 
@@ -54,7 +53,7 @@ Register
   
   
 
-## Requerimientos y aplicación:
+## Requerimientos y aplicación de estos:
 
 **Rutas hijas** en `app-routing.module` sobre los componentes `LoginComponent` y `RegisterComponent` con prefijo *admin*.
 
@@ -66,14 +65,18 @@ Register
 
 **Guards** en `PublishComponent` para permitir publicación solo a usuarios logueados.
 
+**Observables** en servicio `bicigo-api.service`.
+
 **HttpClient** en `HomeComponent`, `SearchComponent` y `PublishCompoment`.
 
-**Pipes personalizados**  pipe *precio* en `HomeComponent`, `SearchComponent` y `ShowComponent`.
+**Pipes** *slice* en `SearchCompoment`. *date* en `ListComponent`.
+
+**Pipe personalizado**  pipe personalizado *precio* en `HomeComponent`, `SearchComponent` y `ShowComponent`.
 
 **Directivas**  *ngIf*, *ngFor* en la mayoría de los componentes.
 
-**Comunicación entre componentes** desde `HomeComponent`, `SearchComponent` hacia `ShowComponent`.
+**Comunicación entre componentes** desde `HomeComponent` y `SearchComponent` hacia `ShowComponent`.
 
-**Binding de datos** en `HomeComponent`.
+**Binding de datos** en `HomeComponent` y `ListComponent`.
 
 **Componentes, Bootstrap y GIT** de forma explicita en todo el proyecto.
